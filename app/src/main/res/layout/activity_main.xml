@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="HouseLoan"
+            type="com.example.housingloanlegalfees.HouseLoan" />
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <EditText
+                android:id="@+id/text_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/selling_price"
+                android:inputType="number" />
+
+        <EditText
+            android:id="@+id/text_down_payment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/down_payment"
+            android:inputType="number" />
+
+        <CheckBox
+            android:id="@+id/checkBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:value="First Buyer"
+            android:text="First Buyer" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/housing_loan_legal_fees" />
+
+        <TextView
+            android:id="@+id/output"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Output :" />
+
+        <TextView
+            android:id="@+id/selling_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text='@{String.format("selling_price : %.1f", HouseLoan.sellingPrice)}'
+             />
+
+        <TextView
+            android:id="@+id/down_payment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text='@{String.format("down_payment : %.1f", HouseLoan.downPayment)}'
+            />
+
+        <TextView
+            android:id="@+id/first_buyer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text='@{"first buyer : " + (HouseLoan.firstTimeBuyer ? "Yes" : "No")}'
+            />
+
+        <TextView
+            android:id="@+id/contact_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="Contact Bank" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/email_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:onClick="contactBank" />
+
+        <Button
+            android:id="@+id/contact_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Phone Call" />
+    </LinearLayout>
+
+
+        <Button
+            android:id="@+id/btn_switch_display"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Switch Display" />
+
+
+    </LinearLayout>
+
+</layout>
